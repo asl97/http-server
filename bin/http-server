@@ -31,7 +31,7 @@ var port = argv.p,
  if (log) {
    requestLogger = function(req) {
       var d = new Date();
-      log('[%s] "%s %s" "%s"', (new Date).toUTCString(), req.method.cyan, req.url.cyan, req.headers['user-agent']);
+      log('[%s] %s "%s %s" "%s"', (new Date).toUTCString(), req.connection.remoteAddress, req.method.cyan, req.url.cyan, req.headers['user-agent']);
    }
  }
 
